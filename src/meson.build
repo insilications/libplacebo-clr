@@ -17,13 +17,6 @@ conf_public.set('apiver', apiver)
 conf_internal.set('BUILD_FIX_VER', fixver)
 conf_internal.set_quoted('BUILD_VERSION', version_pretty)
 
-if opengl.found()
-  has_egl = opengl.get_variable(pkgconfig: 'epoxy_has_egl', default_value: '0')
-  if has_egl.to_int() == 1
-    conf_internal.set10('EPOXY_HAS_EGL', true)
-  endif
-endif
-
 vulkan_headers = vulkan
 if vulkan.found() and not get_option('vulkan-link')
   vulkan_headers = vulkan.partial_dependency(includes: true)
