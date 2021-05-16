@@ -7,7 +7,7 @@ test_deps = []
 
 vulkan = dependency('vulkan', version: '>=1.1', required: get_option('vulkan'))
 opengl = dependency('epoxy', version: '>=1.4.0', required: get_option('opengl'))
-shaderc = dependency('shaderc', version: '>=2018.0', required: get_option('shaderc'))
+shaderc = dependency('shaderc_combined', version: '>=2018.0', required: get_option('shaderc'))
 
 # configuration data
 conf_public = configuration_data()
